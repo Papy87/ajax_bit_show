@@ -4,10 +4,32 @@ const main = ((data, view) => {
         console.log("init");
         data.fetchShow(onSuccess)
     }
+
     function onSuccess(data) {
-        console.log("onsucc", data)
+        console.log("onsucc", data);
         view.showOnPage(data);
+        $(".movie-card").on("click", movieclickhandler);
     }
+
+    function initSecondPage() {
+        const id = localStorage.getItem("id");
+        data.fetchSingleShow(onSuccessOneMovie, id);
+    }
+
+    function onSuccessOneMovie(data) {
+        view.showOnPageOneMovieInfo(data);
+    }
+
+    function movieclickhandler(event) {
+
+        const id = $(event.target).attr("data-id");
+        localStorage.setItem("id", id);
+        window.location.href = './second.html';
+
+
+    }
+
+
 
 
 
@@ -17,7 +39,9 @@ const main = ((data, view) => {
 
     return {
         init,
-        onSuccess
+        onSuccess,
+        initSecondPage,
+        onSuccessOneMovie
     }
 
 
