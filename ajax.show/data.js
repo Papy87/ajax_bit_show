@@ -20,10 +20,10 @@ const dataModule = (() => {
     }
 
     class OneShow extends Show {
-        constructor(name, id, image, summary, cast) {
+        constructor(name, id, image, summary,seasons, cast) {
             super(name, id, image);
             this.summary = summary;
-            // this.seasons = seasons;
+            this.seasons = seasons;
             this.cast = cast;
 
 
@@ -58,8 +58,10 @@ const dataModule = (() => {
                 response.id,
                 response.image.medium,
                 response.summary,
+                response._embedded.seasons,    
                 response._embedded.cast
             )
+            // console.log(show)
 
             onSucessOneMovie(show);
         })
