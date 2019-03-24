@@ -14,7 +14,7 @@ const main = ((data, view) => {
 
   
     ///search input function
-
+    
     $(".form-control").keyup(() =>{
            
         const $inputValue = $(".form-control").val()
@@ -23,21 +23,21 @@ const main = ((data, view) => {
    
     });
 
-   function onSuccessInputShow(data){
-       view.displayShows(data);
-       $(".movie-card").on("click", inputMovieHendler);
+    
+    function onSuccessInputShow(data){
+        view.displayShows(data);
+        $(".movie-card").on("click", inputMovieHendler);
     }
-
+    
     function inputMovieHendler(){
         const id = $(event.target).attr("data-id");
         localStorage.setItem("id", id);
         window.location.href = './second.html';
         
     }
-
-
-
-
+    
+    
+    
     function initSecondPage() {
         const id = localStorage.getItem("id");
         data.fetchSingleShow(onSuccessOneMovie, id);

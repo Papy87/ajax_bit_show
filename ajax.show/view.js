@@ -23,7 +23,12 @@ const ViewModule = (() => {
 
         })
     }
+
+
+
+    
     function displayShows(arr){
+        console.log(arr)
         const $searchDropdown=$(".search-dropdown");
         $searchDropdown.text("")
         arr.forEach(element => {

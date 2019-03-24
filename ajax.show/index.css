@@ -18,6 +18,7 @@
 }
 .col-4 p{
     font-size: 1.3em;
+    border-bottom: 1px solid lightgray ;
 }
 .col-4 img{
     width: 100%;
@@ -82,4 +83,9 @@ footer{
 .col-6 > ul > li{
     list-style: none;
 
+}
+
+img{
+    border-radius: 10%;
+    
 }

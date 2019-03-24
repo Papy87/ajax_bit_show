@@ -62,7 +62,7 @@ const dataModule = (() => {
                 response._embedded.seasons,
                 response._embedded.cast
             )
-            console.log(show)
+            // console.log(show)
 
             onSucessOneMovie(show);
         })
@@ -74,7 +74,7 @@ const dataModule = (() => {
 
 
         $.get(request, (response) => {
-            console.log(response)
+            // console.log(response)
             const newArrayInput = response.map(show => {
               
                 return new Show(show.show.name,show.show.id, show.show.image);
