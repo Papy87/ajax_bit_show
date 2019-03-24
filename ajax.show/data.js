@@ -20,7 +20,7 @@ const dataModule = (() => {
     }
 
     class OneShow extends Show {
-        constructor(name, id, image, summary,seasons, cast) {
+        constructor(name, id, image, summary, seasons, cast) {
             super(name, id, image);
             this.summary = summary;
             this.seasons = seasons;
@@ -30,6 +30,7 @@ const dataModule = (() => {
 
         }
     }
+    
 
 
     function fetchShow(onSuccess) {
@@ -58,13 +59,31 @@ const dataModule = (() => {
                 response.id,
                 response.image.medium,
                 response.summary,
-                response._embedded.seasons,    
+                response._embedded.seasons,
                 response._embedded.cast
             )
-            // console.log(show)
+            console.log(show)
 
             onSucessOneMovie(show);
         })
+
+    }
+    function fetchInputShow(onSuccessInputShow, $inputValue) {
+
+        const request = "https://api.tvmaze.com/search/shows?q=" + $inputValue
+
+
+        $.get(request, (response) => {
+            console.log(response)
+            const newArrayInput = response.map(show => {
+              
+                return new Show(show.show.name,show.show.id, show.show.image);
+            })
+            
+              console.log(newArrayInput)
+          onSuccessInputShow(newArrayInput);
+        })
+
 
     }
 
@@ -72,12 +91,11 @@ const dataModule = (() => {
 
 
 
-
-
-
     return {
         fetchShow,
-        fetchSingleShow
+        fetchInputShow,
+        fetchSingleShow,
+
 
     }
 

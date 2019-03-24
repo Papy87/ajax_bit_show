@@ -27,5 +27,59 @@
     text-align: center;
 }
 .row{
-    margin:0 100px;
+    margin:0 20%;
+}
+h1{
+    text-align: center;
+    margin: 2% 0%;
+}
+.headerDiv{
+    margin: 0 20%;
+}
+.col-6{
+    padding-right: 10%;
+}
+.search-dropdown{
+    position: absolute;
+    z-index: 2;
+    top:100%;
+
+    background-color:rgba(255,255,255,0.5);
+    color:black;
+    list-style: none;
+    display: none;
+    
+}
+.search-dropdown > li{
+    
+    padding: 5px 10px 5px 20px;
+
+   
+}
+.search-dropdown > li:hover{
+    background: rgba(52,58,64);
+    color: white;
+    cursor: pointer;
+ 
+
+}
+.arrow-link{
+    position: relative;
+    left: 21%;
+
+}
+.arrow-link > i{
+    font-size: 35px;
+    color: rgba(52,58,64);
+}
+footer{
+    margin-top:1%;
+}
+.col-12 > h2{
+    margin-top: 2%;
+
+}
+.col-6 > ul > li{
+    list-style: none;
+
 }
